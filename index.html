@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Commentary Demo</title>
+		<!-- Bootstrap -->
+			<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Commentary.</h1>
+			<a class="btn btn-primary btn-large" href="#authenticate" id="authenticate">
+				Login with App.net
+			</a>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+
+		<script src='js/URI/URI.js'></script>
+		<script src="js/api.js"></script>
+
+		<script type="text/javascript">
+			var NOTIFIER_OPTIONS = {
+				client_id: 'CyChWbghPVmr3t8ffKAANvrNjMc8WGyH',
+				redirect_uri: 'http://commentary.github.com/commentary/callback.html',
+				response_type: "token",
+				scope: "basic,write_post"
+			};
+		</script>
+
+		<script src='js/commentary.js'></script>
+	</body>
+</html>
