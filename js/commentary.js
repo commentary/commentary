@@ -11,6 +11,7 @@
             var url = API.get_auth_url(NOTIFIER_OPTIONS);
             window.location.href = url;
         });
+        console.log('...initialized.');
     };
 
     var init = function (){
@@ -20,6 +21,7 @@
         $('#logout').on('click', function () {
             console.log('Logging out...');
             delete window.localStorage.access_token;
+            window.location.href = document.url;
         });
         $('#logout').addClass("btn");
 
