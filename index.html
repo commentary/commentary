@@ -8,9 +8,13 @@
 	<body>
 		<div class="container">
 			<h1>Commentary.</h1>
-			<a class="btn btn-primary btn-large" href="#authenticate" id="authenticate">
+			<a class="btn btn-primary btn-large hide" href="#authenticate" id="authenticate">
 				Login with App.net
 			</a>
+			<div id="userinfo" class="hide">
+				You are logged in as <span class="user_full_name"><span class="label label-inverse">. . .</span></span>.
+				<a href="#logout" id="logout">Log out.</a>
+			</div>
 		</div>
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -22,7 +26,7 @@
 		<script type="text/javascript">
 			var NOTIFIER_OPTIONS = {
 				client_id: 'CyChWbghPVmr3t8ffKAANvrNjMc8WGyH',
-				redirect_uri: 'http://commentary.github.com/commentary/callback.html',
+				redirect_uri: 'http://commentary.github.com/commentary',
 				response_type: "token",
 				scope: "basic,write_post"
 			};
