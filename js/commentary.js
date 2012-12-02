@@ -4,27 +4,35 @@
 
     var ask_for_authentication = function () {
         console.log('Initializing authentication...');
-        $('#authenticate').removeClass('hide');
 
+        $('#authenticate').removeClass('hide');
         $('#authenticate').on('click', function () {
             console.log('authenticating...');
             var url = API.get_auth_url(NOTIFIER_OPTIONS);
             window.location.href = url;
         });
+
         console.log('...initialized.');
     };
 
-    var init = function (){
+    var logout = function () {
+        console.log('Logging out...');
+
+        delete window.localStorage.access_token;
+        $('#userinfo').addClass('hide');
+
+        console.log('...logged out.');
+
+        ask_for_authentication();
+    }
+
+    var login = function (){
         NOTIFIER_OPTIONS.access_token = window.localStorage.access_token;
         API = API.init(NOTIFIER_OPTIONS);
 
         $('#logout').on('click', function () {
-            console.log('Logging out...');
-            delete window.localStorage.access_token;
-            $('#authenticate').removeClass('hide');
-            $('#userinfo').addClass('hide');
+            logout();
         });
-        $('#logout').addClass("btn");
 
 
         var get_user_info = function () {
@@ -52,7 +60,7 @@
         console.log("Checking access token...");
         if (window.localStorage.access_token) {
             console.log("...user is authenticated");
-            init();
+            login();
         } else {
             console.log("...not authenticated");
             ask_for_authentication();
