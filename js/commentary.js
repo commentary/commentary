@@ -21,7 +21,8 @@
         $('#logout').on('click', function () {
             console.log('Logging out...');
             delete window.localStorage.access_token;
-            window.location.href = document.url;
+            $('#authenticate').removeClass('hide');
+            $('#userinfo').addClass('hide');
         });
         $('#logout').addClass("btn");
 
