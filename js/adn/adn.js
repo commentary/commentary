@@ -2,8 +2,8 @@ window.APPDOTNET = (function () {
 
     var default_options = {
         api_host: 'alpha-api.app.net',
-        url_base: '/stream/0/',
         auth_host: 'account.app.net',
+        url_base: '/stream/0/',
         auth_endpoint: '/oauth/authenticate'
     };
 
